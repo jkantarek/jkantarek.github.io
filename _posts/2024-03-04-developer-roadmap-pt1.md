@@ -1,5 +1,5 @@
 ---
-title: Be a Farfalle Developer
+title: Be a farfalle developer
 author: Jeff Kantarek
 date: 2024-03-04
 layout: post
@@ -15,6 +15,8 @@ mermaid: true
 Do you find yourself writing code that needs to exist _everywhere_ before you write a test or have confidence that it is working? Are you the kind of developer that does print development or needs to have a UI to see your work in action? It's important to recognize that practice is forcing you to think about _multiple_ domains and edge cases all at the same time.  Your code change becomes a new strand of spaghetti in a code base that is already full of lots of spaghetti. Instead be a [Farfalle](https://en.wikipedia.org/wiki/Farfalle) developer. Write code that is compact and clear. It has clear inputs and outputs with a protected piece of logic in the middle.
 </div>
 </div>
+
+<!--more-->
 
 There is one habit that I've found really re-enforces this thought process. **Every git commit should contain two files; one for your change, and one for the tests for your change.** This will force you to learn a few things:
 
@@ -64,7 +66,7 @@ Lets use this structure to build out a feature like **Populate work histories to
 3. Build the frontend experience
 4. Build the LinkedIn integration
 
-The order here matters. Deciding on the contract between the backend and LinkedIn data _first_ means that you'll have clear compatibility between the two systems. Understanding the frontend failure cases will expose what UX will need to be supported on the frontend. Your integration becomes a hydration _tool_ that could be swapped out for some other service in the future (if you wanted to but [YAGNI](https://martinfowler.com/bliki/Yagni.html). You avoid painting yourself into a corner because your backend model is the source of truth _not_ LinkedIn.  Additionally, once the backend work is done the rest can be done in parallel. There's an overkill version where the _API contract_ is the only blocking work but that is likely _too abstract_ to be effective and is micro-managment.
+The order here matters. Deciding on the contract between the backend and LinkedIn data _first_ means that you'll have clear compatibility between the two systems. Understanding the frontend failure cases will expose what UX will need to be supported on the frontend. Your integration becomes a hydration _tool_ that could be swapped out for some other service in the future (if you wanted to but [YAGNI](https://martinfowler.com/bliki/Yagni.html)). You avoid painting yourself into a corner because your backend model is the source of truth _not_ LinkedIn.  Additionally, once the backend work is done the rest can be done in parallel. There's an overkill version where the _API contract_ is the only blocking work but that is likely _too abstract_ to be effective and is micro-managment.
 
 <div class="row">
   <div class="column" markdown="1" style="flex:70%">
@@ -95,8 +97,10 @@ What is optimal about this structure is the relevant commits are _individually r
 
 ## .zshrc Snippits
 
-I have these shell snippts to make rebasing and working with commits _way_ easier. I would encourage you to actually understand what each line is doing and why they are useful.
+I have these shell snippets to make rebasing and working with commits _way_ easier. I would encourage you to actually understand what each line is doing and why they are useful.
 
 ![](/assets/images/commits%20in%20action.gif)
+
+Here's a [gist](https://gist.github.com/jkantarek/d9ff8632e4c381d504415b7e3625c693) of the zsh commands I use for this workflow
 
 <script src="https://gist.github.com/jkantarek/d9ff8632e4c381d504415b7e3625c693.js"></script>
