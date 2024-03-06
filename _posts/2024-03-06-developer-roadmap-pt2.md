@@ -1,14 +1,12 @@
 ---
-title: Urgent Urgency
+title: Urgent urgency
 author: Jeff Kantarek
 date: 2024-03-04
 layout: post
 mermaid: true
 ---
 
-### Make it easy to always be done with _something_
-
-A huge part of my life is wrapped up in the [maker movement](https://en.wikipedia.org/wiki/Maker_culture) from the late 2000s.  One of the most important things I realized is that it's more important to finish _something_ than to keep trying to figure out what to do next. The idea of this is distilled (at least for me) by the [Done Manifesto by Bre Pettis](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13) and [JFDI from Chicago's Pumping Station: One](https://wiki.pumpingstationone.org/wiki/Just_Fucking_Do_It). The done manifesto is worth reading in its entirety:
+A huge part of my life is wrapped up in the [maker movement](https://en.wikipedia.org/wiki/Maker_culture) from the late 2000s.  One of the most important things I realized is that it's more important to finish _something_ than to keep trying to figure out what to do next. The idea of this is distilled (at least for me) by the [Done Manifesto by Bre Pettis](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13) and [JFDI from Chicago's Pumping Station: One](https://wiki.pumpingstationone.org/wiki/Just_Fucking_Do_It). <!--more--> The done manifesto is worth reading in its entirety:
 
 > **The Cult of Done Manifesto**
 > 
