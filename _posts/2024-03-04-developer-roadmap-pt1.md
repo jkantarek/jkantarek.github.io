@@ -95,7 +95,7 @@ Lets combine these two strategies to really explain what is happening through a 
 
 What is optimal about this structure is the relevant commits are _individually releaseable._  Each chunk should be easy to review. If something in the middle becomes complicated you have the option to stop! Now you can put the complicated work on a new branch, release what you have and focus on the complexity while still showing that you're getting your work done.
 
-## .zshrc Snippits
+## .zshrc Snippets
 
 I have these shell snippets to make rebasing and working with commits _way_ easier. I would encourage you to actually understand what each line is doing and why they are useful.
 
