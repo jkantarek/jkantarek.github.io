@@ -12,14 +12,14 @@ mermaid: true
    </div>
 
   <div class="column column-70" markdown="1">
-I cook for fun and to feel better about failing. The _most_ satisfying meals are the big ones where everything arrives hot and on time. Then there are others where you get in the weeds and everything starts falling apart.  You have to start picking and editing what happens next and who you're likely to disappoint to get things back on track. Getting out of the weeds requires two important steps: identifying the next worst problem, and sitting down to do the work.
+I cook for fun and to feel better about failing. The _most_ satisfying meals are the big ones where everything arrives hot and on time. Then there are others where you get in the weeds and everything starts falling apart.  You have to start picking and editing what happens next and who you're likely to disappoint to get things back on track. Some software developers _live_ in the weeds, trying to get features out the door or getting pulled into on-call firefighting can be an every day problem. Getting out of the weeds requires two important steps: identifying the next worst problem, and sitting down to do the work.
 </div>
 </div>
 <!--more-->
 
 ## What is the next thing that is going to kill me
 
-Canadian [heart throb](https://www.youtube.com/watch?v=KaOC9danxNo) and astronaut Chris Hadfield had an [amazing interview](https://www.npr.org/transcripts/241830872) with Terry Gross in 2013 that is always on my mind. Wether it's during an on-call incident, trying to avoid a toddler meltdown, or finishing dinner:
+Canadian [heart throb](https://www.youtube.com/watch?v=KaOC9danxNo) and astronaut Chris Hadfield had an [amazing interview](https://www.npr.org/transcripts/241830872) with Terry Gross in 2013 that is always on my mind. Whether it's during an on-call incident, trying to avoid a toddler meltdown, or finishing dinner:
 
 > **What's the next thing that's going to kill me?** And it might be five seconds away ... I know that this is dangerous, but there are six things that I could do right now, all of which will help make things better. And it's worth remembering, too, there's no problem so bad that you can't make it worse.
 
