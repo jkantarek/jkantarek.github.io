@@ -3,15 +3,44 @@
  * Its purpose is for users of the theme to be able to add css rules from a blank file
  *   these get simply added to the ones already active in the layout.
  */
- .row {
+.row {
   display: flex;
+  flex-wrap: wrap;
 }
 
+/* Base column styling */
 .column {
-  flex: 50%;
   padding: 10px;
 }
 
-.footer-padding {
-  padding-top: 30px;
+/* Class for a 30% width column */
+.column-30 {
+  flex: 0 0 30%;
+}
+
+/* Class for a 70% width column */
+.column-70 {
+  flex: 0 0 70%;
+}
+
+/* Class for a 40% width column */
+.column-40 {
+  flex: 0 0 40%;
+}
+
+/* Class for a 40% width column */
+.column-50 {
+  flex: 0 0 50%;
+}
+
+/* Class for a 60% width column */
+.column-60 {
+  flex: 0 0 60%;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .column-30, .column-70, .column-40, .column-60 .column-50 {
+    flex-basis: 100%; /* Stack columns on small screens */
+  }
 }
