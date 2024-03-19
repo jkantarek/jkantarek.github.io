@@ -24,11 +24,11 @@ Are you the kind of developer that feels perpetually lost in a codebase? Do you 
   <iframe src="https://www.npr.org/player/embed/134195812/134195976" width="100%" height="206" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe>
   </div>
   <div class="column column-40" markdown="1">
-   Grant Achatz is a world class chef at Alinea in Chicago.  In 2007 he was treated for tongue cancer and **lost all sense of taste**. He had to rebuild his sense of taste from zero!! In 2011 he talked with [Terry Gross](https://www.npr.org/transcripts/134195812)
+   [Grant Achatz](https://en.wikipedia.org/wiki/Grant_Achatz) is a world class chef with four Michelin stars across his [Alinea Group restauraunts](https://www.thealineagroup.com/) in Chicago.  In 2007 he was treated for tongue cancer and **lost all sense of taste**.  In 2011 he talked with [Terry Gross](https://www.npr.org/transcripts/134195812):
   </div>
 </div>
 
-> I started from zero and the first thing back was sweet. So my palate developed just as a newborn, but I was 32 years old. So I could understand how flavors were coming back and how they synergized together.
+> I started from **zero** and the first thing back was sweet. So my palate developed just as a newborn, but I was 32 years old. So I could understand how flavors were coming back and how they synergized together.
 
 Imagine losing all your footing for how you approach problems. You can feel completely blind and disoriented. It's critical to have anchors that you can rebuild from. I tend to lean on investigating what is in the database to understand the truth of a codebase.  There are so many small details you can rebuild to understand what _must be happening_ in the code because the database tells you so.
 
@@ -38,18 +38,28 @@ Take the time to build habits to query the database _directly_ instead of relyin
 
 <div class="row">
   <div class="column column-60" markdown="1">
-If you're trying to figure out how to write raw SQL there are two main tools that I'd recommend. Your ORM will almost always have an `explain` function. In ActiveRecord (built into Rails) you simply tack on a `.explain` to the end of your query function.  Rails 7.1 [exposed even more powerful options](https://www.bigbinary.com/blog/rails-7-1-adds-options-to-activerecord-relation-explain) to help you go from Ruby to raw SQL. [Django](https://docs.djangoproject.com/en/5.0/topics/db/optimization/) has a very similar `QuerySet.explain()` method.  ChatGPT is _incredibly_ good at building and re-writing complex queries.  Having confidence to use _data_ to prove what is happening is great for both digging into a codebase but also as a way to manage scope. 
+If you're trying to figure out how to write raw SQL there are two main tools that I'd recommend. Your [ORM](https://guides.rubyonrails.org/active_record_basics.html#object-relational-mapping) will almost always have an `explain` function. In ActiveRecord (built into Rails and the source of most Rails Magic®) you simply tack on a `.explain` to the end of your query function.  Rails 7.1 [exposed even more powerful options](https://www.bigbinary.com/blog/rails-7-1-adds-options-to-activerecord-relation-explain) to help you go from Ruby to raw SQL. [Django](https://docs.djangoproject.com/en/5.0/topics/db/optimization/) has a very similar `QuerySet.explain()` method.  ChatGPT is _incredibly_ good at building and re-writing complex queries.  Having confidence to use _data_ to prove what is happening is great for both digging into a codebase and as a way to manage scope. 
 </div>
   <div class="column column-40" markdown="1">
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHVod3p1cXVqMTV4OWMxZ3JpdHZvbmc0YnV4cGw5MWI4bXBmN3Q1MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XyItwQi03YC8IGeX7O/giphy-downsized.gif)
 </div>
 </div>
 
-If you imagine a specific edge case, query the database to understand the _magnitude_ of that problem. Developers love to play "what if" for big scary edge cases. If the surface area is zero for your case, build in an exception and _move on_ it is not a case that matters for your business!  If there are less than 1% of total cases, backfill the data _then_ add the exception. If there are over 100 it's likely you need to talk to product because the missed a persona!
+If you imagine a specific edge case, query the database to understand the _magnitude_ of that problem. Developers love to play "what if" for big scary edge cases. If the surface area is zero for your case, build in an exception and _move on_ it is not a case that matters for your business!  If there are less than 1% of total cases, backfill the data _then_ add the exception. If there are over 100 it's likely you need to talk to product because the missed a persona!  Why an exception? When someone starts doing that exceptional thing, future you can look at that PR, remember how dumb (or smart you were) and decide to refactor all with the warm fuzzy confidence that the data is safe!
 
 ## Simple to say, hard to do
 
-Lets look at an example (and pretend we have this data in the database). Say we have a `people` table with a `full_name` column that is an open ended string input with zero validation. We want to **start sending emails that are addressed to just that user's `first_name`.** Should be really simple right? How many people put in `Mr.` or `Dr.` or `Sir`? do we even know if we _can_ decompose these strings?
+Lets look at an example (and pretend we have this data in the database). Say we have a `people` table with a `full_name` column that is an open ended string input with zero validation. We want to **start sending emails that are addressed to just that user's `first_name`.** Should be really simple right? How many people put in `Mr.` or `Dr.` or `Sir`? Do we even know if we _can_ decompose these strings?
+
+<div class="row">
+  <div class="column column-40" markdown="1">
+![](/assets/images/distribution_examples.png)
+</div>
+  <div class="column column-60" markdown="1">
+ First, lets figure out the surface area of the problem. How many records do we have in total, what are the minimum, maximum, average, and 95th percentile (p95) of spaces.  Why [percentiles](https://youtu.be/Ngyt8Q5tWkU?t=57)? They help you understand what is the _most likely case_ you'll have to deal with. If your average (mean) and 95th percentile are very close together that means your data is mostly clustered together in some part of your full range (min..max). If your min or max is far way from both the average and p95 then you have some interesting _outlier data_ that might be better suited for normalization instead of explicitly handling. The graphs are toy examples to help build an intuitive sense of what the _could_ be.  Lets look at the raw numbers:
+</div>
+</div>
+
 ```sql
 SELECT
   COUNT(*) AS total_records,
@@ -58,17 +68,19 @@ SELECT
   AVG(len) AS avg_spaces,
   PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY len) AS percentile_95th_spaces
 FROM
-  (SELECT
+  (SELECT -- this sub query gives us a basic temp table with all the records as the names with numbers of spaces instead of the full string
      LENGTH(full_name) - LENGTH(REPLACE(full_name, ' ', '')) AS len
    FROM
      people) AS subquery;
 ```
 
+
+
 | total_records | min_spaces | max_spaces | avg_spaces | percentile_95th_spaces |
 | ------------- | ---------- | ---------- | ---------- | ---------------------- |
 | 1000          | 0          | 4          | 1.75       | 3                      |
 
-As a first pass this lets us know that there's **some kind of problem.**  Now we need to understand **how big is it?**
+As a first pass this lets us know that there's **data with more than one space which is a pain for this feature.**  Now we need to understand **how big of a pain is that difference going to be?**
 
 ```sql
 SELECT
