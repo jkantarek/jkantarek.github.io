@@ -13,17 +13,11 @@ We used to live in a world with only analog computers. Purpose built machines th
 ![](/assets/images/analog-defender.webp)
 </div>
 </div>
-
-<div class="row">
-  <div class="column column-60" markdown="1">
-<iframe width="420" height="206" src="https://www.youtube.com/embed/6fdTkOK-Xlo?si=09Mjy0w4__s_ueW6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div class="column column-40" markdown="1">
-  The most famous analog computer is talked about so rarely but we've all been exposed to the results of it, the [Electronium](https://99percentinvisible.org/episode/player-piano/transcript/).  It's an analog computer that could actively feedback on itself and build up not just a solution but a tapestry. Where the hallucination is the feature.  Make your own Electronium with [ChatGPT](https://chat.openai.com/share/a217432a-0edb-4531-ac1c-0ff548305989) and [Sonic Pi](https://sonic-pi.net/)
-</div>
-</div>
-
 <!--more-->
+The most famous analog computer is talked about so rarely but we've all been exposed to the results of it, the [Electronium](https://99percentinvisible.org/episode/player-piano/transcript/).  It's an analog computer that could actively feedback on itself and build up not just a solution but a tapestry. Where the hallucination is the feature.  You can even make your own Electronium with [ChatGPT](https://chat.openai.com/share/a217432a-0edb-4531-ac1c-0ff548305989) and [Sonic Pi](https://sonic-pi.net/)!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6fdTkOK-Xlo?si=09Mjy0w4__s_ueW6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 My favorite way to work with ChatGPT is to lean into those hallucinations.  While there are far too many AI published books spewing across amazon there's something incredible about watching an AI slowly build up a cohesive story.  I've [tried](https://chat.openai.com/share/5ce2423a-e983-4e48-b108-c2fbe8d232e0) in [fits](https://chat.openai.com/c/60ea1475-0a53-4314-9c02-7c15d1168eff) and [spurts](https://chat.openai.com/share/b9d2f103-639e-4966-aa87-c820cc363475) to help [articulate](https://docs.google.com/document/d/1Zq9AhdSeufoUzRDTRA-TdVoCW7H18ljV5zI_vGvkgK4/edit?usp=sharing) why I wish analog computing would make a real serious comeback.
 
 <div class="row">
