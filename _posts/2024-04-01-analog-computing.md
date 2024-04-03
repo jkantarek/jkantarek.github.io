@@ -5,14 +5,21 @@ date: 2024-03-28
 layout: post
 mermaid: true
 ---
+<div class="row">
+  <div class="column column-70" markdown="1">
 We used to live in a world with only analog computers. Purpose built machines that could take an input and give the output.  Take the [Antikythera mechanism](https://en.wikipedia.org/wiki/Antikythera_mechanism) an _ancient_ analog timekeeper on steroids. While trivial for us today this was a huge military advantage to coordinate ship movements across time and space.  Military requirements for computing [ballistic trajectories](https://en.wikipedia.org/wiki/Rangekeeper) were all analog and capable of computing "[firing solutions](https://www.reddit.com/r/explainlikeimfive/comments/y1m3ta/eli5_what_is_a_firing_solution/)."  Someone literally has to do the math and come up with a _solution_.
+</div>
+<div class="column column-30" markdown="1">
+![](/assets/images/analog-defender.webp)
+</div>
+</div>
 
 <div class="row">
   <div class="column column-60" markdown="1">
 <iframe width="420" height="206" src="https://www.youtube.com/embed/6fdTkOK-Xlo?si=09Mjy0w4__s_ueW6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <div class="column column-40" markdown="1">
-  The most famous analog computer is talked about so rarely but we've all been exposed to the results of it, the [Electronium](https://99percentinvisible.org/episode/player-piano/transcript/).  It's an analog computer that could actively feedback on itself and build up not just a solution but a tapestry. Where the hallucination is the feature.
+  The most famous analog computer is talked about so rarely but we've all been exposed to the results of it, the [Electronium](https://99percentinvisible.org/episode/player-piano/transcript/).  It's an analog computer that could actively feedback on itself and build up not just a solution but a tapestry. Where the hallucination is the feature.  Make your own Electronium with [ChatGPT](https://chat.openai.com/share/a217432a-0edb-4531-ac1c-0ff548305989) and [Sonic Pi](https://sonic-pi.net/)
 </div>
 </div>
 
